@@ -16,7 +16,8 @@ export const LandingPage: React.FC = () => {
             const { error } = await supabase.auth.signInWithOtp({
                 email,
                 options: {
-                    emailRedirectTo: window.location.origin
+                    // FORCE REDIRECT TO VERCEL PROD (Temporary Fix)
+                    emailRedirectTo: 'https://risk-assessment-platform.vercel.app'
                 }
             });
 
